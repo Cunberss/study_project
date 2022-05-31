@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h2 class="note">Отправленные вам записи:</h2>
+{% if latest_text_list %}
+{% for a in latest_text_list %}
+<div class="note-rect">
+         <a href="{% url 'recognition:detailsend' a.id %}" class="note" >{{a.title}} </a><br><br>
+</div>
+{% endfor %}
+{% else %}
+    История пуста
+{% endif %}
+
+{% endblock %}

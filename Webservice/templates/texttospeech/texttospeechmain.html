@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="note-rect">
+         <a class='note' href="yandexkit">Google API</a>
+</div>
+
+<form action="{% url 'texttospeech:texttospeech' %}" method=post enctype=multipart/form-data>
+<p class='note' align="center">Введите текст на русском языке<Br>
+  <div align="center">
+   <textarea name="texts" cols="70" rows="15"></textarea></p>
+    <p class='note' align="center">Готовая аудиозапись будет хранится во вкладке "Мои записи"</p>
+    <p><input type=submit value="Отправить текст" name="Отправить текст" class="note-rect"></p>
+  </div>
+</form>
+{% endblock %}

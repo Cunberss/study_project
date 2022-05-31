@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}
+Распознаватор
+{% endblock %}
+
+{% block body %}
+<h2>{{text.title}}</h2>
+<div style="width:470px">
+<audio controls>
+    <source src="/{{text.uploadedFile}}" type="audio/mp3">
+    <a href="/{{text.uploadedFile}}">Скачайте музыку</a>
+</audio>
+</div>
+<h6>Создатель: {{text.sender}}</h6>
+<button class="btn btn-danger" id='btn' onclick="Many()">Опции</button>
+<form action="{% url 'texttospeech:detailsend' text.id %}" method=post enctype=multipart/form-data>
+<input type=submit hidden id="1" value="Удалить" name="Удалить" class="btn btn-danger">
+<input type=submit hidden id="2" value="Перевести в текст" name="Перевести в текст" class="btn btn-danger">
+</form>
+<a class="btn btn-large btn-danger" hidden id="3" href="/{{text.uploadedFile}}">Скачать аудио</a>
+
+<script>
+ function Many() {
+ if (document.getElementById("1").hidden == true)
+ {
+ document.getElementById("btn").style.background =  "black";
+ document.getElementById("1").hidden = false;
+ document.getElementById("2").hidden = false;
+ document.getElementById("3").hidden = false;
+  }
+  else
+  {
+  document.getElementById("btn").style.background =  "";
+  document.getElementById("1").hidden = true;
+ document.getElementById("2").hidden = true;
+ document.getElementById("3").hidden = true;
+  }
+
+ }
+
+</script>
+{% endblock %}

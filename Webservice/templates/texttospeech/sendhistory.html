@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h2 class="note">Отправленные вам аудиозаписи:</h2>
+{% if latest_text_list %}
+{% for a in latest_text_list %}
+<a href="{% url 'texttospeech:detailsend' a.id %}" class="btn btn-large btn-danger" >{{a.title}}, От кого: <strong>{{a.sender}}</strong> </a><br><br>
+{% endfor %}
+{% else %}
+    История пуста
+{% endif %}
+
+{% endblock %}

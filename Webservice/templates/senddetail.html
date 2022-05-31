@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h2>{{text.title}}</h2>
+<p><strong>{{text.text}}</strong></p><br>
+<h6>Получено от: {{text.sender}}</h6>
+<button class="btn btn-danger" id="btn" onclick="Many()">Опции</button>
+<form action="{% url 'recognition:detailsend' text.id %}" method=post enctype=multipart/form-data>
+ <input type=submit hidden id='1' value="Сохранить в Word" name="Сохранить в Word" class="btn btn-danger">
+<input type=submit hidden id="2" value="Удалить" name="Удалить" class="btn btn-danger">
+<input type=submit hidden id="3" value="Перевести в аудио" name="Перевести в аудио" class="btn btn-danger">
+<br><input type=submit hidden id='4' value="Перевести" name="Перевести" class="btn btn-danger">
+<p class="btn">
+	<select  id='5' hidden name="Selectedeng" required class="custom-select btn">
+  <option value="1">RU->EN</option>
+  <option value="2">EN->RU</option>>
+</select>
+	</p>
+</form>
+
+<script>
+ function Many() {
+ if (document.getElementById("1").hidden == true)
+ {
+ document.getElementById("btn").style.background =  "black";
+ document.getElementById("1").hidden = false;
+ document.getElementById("2").hidden = false;
+ document.getElementById("3").hidden = false;
+  document.getElementById("4").hidden = false;
+ document.getElementById("5").hidden = false;
+  }
+  else
+  {
+  document.getElementById("btn").style.background =  "";
+  document.getElementById("1").hidden = true;
+ document.getElementById("2").hidden = true;
+ document.getElementById("3").hidden = true;
+   document.getElementById("4").hidden = true;
+ document.getElementById("5").hidden = true;
+  }
+
+ }
+
+</script>
+{% endblock %}

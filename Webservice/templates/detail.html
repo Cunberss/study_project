@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h2 class='note'>{{text.title}}</h2>
+<p class='note'><strong>{{text.text}}</strong></p><br>
+<h6 class='note'>Создатель: {{text.sender}}</h6>
+<button class="note-rect" id='btn' onclick="Many()">Опции</button>
+<form action="{% url 'recognition:detail' text.id %}" method=post enctype=multipart/form-data>
+ <input type=submit hidden id='1' value="Отправить запись" name="Отправить запись" class="btn btn-danger">
+  <input type="text" hidden id='2' placeholder="Введите имя пользователя" name="nameuser"><br>
+<input type=submit hidden id='3' value="Изменить" name="Изменить" class="btn btn-danger">
+ <input type="text" hidden id='4' placeholder="Изменить запись" name="refactor"><br>
+ <input type=submit hidden id='5' value="Удалить" name="Удалить" class="btn btn-danger">
+<input type=submit hidden id='6' value="Сохранить в Word" name="Сохранить в Word" class="btn btn-danger">
+<input type=submit hidden id='7' value="Перевести в аудио" name="Перевести в аудио" class="btn btn-danger"><br>
+<input type=submit hidden id='8' value="Перевести" name="Перевести" class="btn btn-danger">
+<p class="btn">
+	<select  id='9' hidden name="Selectedeng"required class="custom-select btn">
+  <option value="1">RU->EN</option>
+  <option value="2">EN->RU</option>>
+</select>
+	</p>
+</form>
+<script>
+ function Many() {
+ if (document.getElementById("1").hidden == true)
+ {
+ document.getElementById("btn").style.background =  "white";
+ document.getElementById("1").hidden = false;
+ document.getElementById("2").hidden = false;
+ document.getElementById("3").hidden = false;
+ document.getElementById("4").hidden = false;
+ document.getElementById("5").hidden = false;
+ document.getElementById("6").hidden = false;
+  document.getElementById("7").hidden = false;
+  document.getElementById("8").hidden = false;
+  document.getElementById("9").hidden = false;
+  }
+  else
+  {
+  document.getElementById("btn").style.background =  "";
+  document.getElementById("1").hidden = true;
+ document.getElementById("2").hidden = true;
+ document.getElementById("3").hidden = true;
+ document.getElementById("4").hidden = true;
+ document.getElementById("5").hidden = true;
+ document.getElementById("6").hidden = true;
+  document.getElementById("7").hidden = true;
+  document.getElementById("8").hidden = true;
+  document.getElementById("9").hidden = true;
+  }
+
+ }
+
+</script>
+{% endblock %}

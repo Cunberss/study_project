@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block body %}
+<br>
+{% if next %}
+  {% if user.is_authenticated %}
+    <p align="center">У вашего аккаунта нет доступа к этой странице.</p>
+  {% else %}
+    <p align="center">Авторизуйтесь для просмотра данной страницы.</p>
+  {% endif %}
+{% endif %}
+
+<form method="post" action="{% url 'login' %}">
+{% csrf_token %}
+<table align="center">
+
+<tr>
+  <td>{{ form.username.label_tag }}</td>
+  <td>{{ form.username }}</td>
+</tr>
+
+<tr>
+  <td>{{ form.password.label_tag }}</td>
+  <td>{{ form.password }}</td>
+</tr>
+</table>
+{% if form.errors %}
+  <p align="center">Неверный логин или пароль. Попробуйте еще раз.</p>
+{% endif %}
+  <p align="center">
+<input class='btn btn-danger' type="submit" value="Войти" />
+<input type="hidden" name="next" value="{{ next }}" />
+  </p>
+</form>
+{# Assumes you setup the password_reset view in your URLconf #}
+<p align="center"><a class="btn btn-danger" href="{% url 'password_reset' %}">Забыли пароль?</a></p>
+{% endblock %}

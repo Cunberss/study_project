@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Распознаватор
+{% endblock %}
+{% block body %}
+<div class="note-rect">
+         <a href="/recognition" class="note" >Yandex API</a>
+	</div>
+<div title='Добавьте аудиофайл любого формата' align="center">
+	<p class='note'>Добавьте файл формата .mp3</p>
+<label for="file-upload" class="note-rect">
+    <i class="note"></i> Загрузить аудиофайл
+</label>
+<form action="{% url 'recognition:yandexkit' %}" method=post enctype=multipart/form-data>
+<input hidden="true" id="file-upload" name='uploadedFile' type="file"/>
+
+<input class="note-rect" type=submit value="Отправить" name="Отправить">
+<br>
+
+</form>
+</div>
+{% endblock %}

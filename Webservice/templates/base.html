@@ -1,0 +1,340 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <title>Распознаватор</title>
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+        p {
+        color: #FFFFFF;
+        }
+        label {
+        color: #FFFFFF;
+        }
+        td {
+        color: #FFFFFF;
+        }
+        h2 {
+        color: #FFFFFF;
+        }
+        h3 {
+        color: #FFFFFF;
+        }
+        h4 {
+        color: #FFFFFF;
+        }
+        body {
+            background: rgb(1, 0, 9);
+            background: linear-gradient(90deg, rgba(1, 0, 9, 1) 0%, rgba(60, 60, 60, 1) 100%);
+            min-height: 97vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            text-decoration: none;
+            z-index: 5;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+        footer {
+            margin-top: auto;
+        }
+
+        .funcbutton {
+            display: flex;
+            justify-content: center;
+            align-self: center;
+
+            margin-right: 10px;
+            margin-left: 10px;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 100%;
+            line-height: 45px;
+            color: #FFFFFF;
+            z-index: 5;
+        }
+
+        .funcbutton:hover {
+            color: darkgray;
+        }
+
+        .bluerect {
+
+            display: flex;
+            align-self: center;
+            margin-left: 5px;
+            background: rgba(0, 93, 255, 0.994792);
+            border-radius: 12px;
+            z-index: 2;
+        }
+
+        .flexlogo {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: row-reverse;
+        }
+
+        .raspoznavator {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 800;
+            font-size: 145%;
+
+            color: rgba(0, 93, 255, 0.994792);
+            z-index: 5;
+        }
+
+        .whiterect {
+            display: flex;
+            justify-content: space-evenly;
+
+            background: #FFFDFD;
+            border-radius: 12px;
+            z-index: 2;
+            margin-left: 10px;
+            margin-right: 5px;
+        }
+
+
+        .minilogo {
+            display: flex;
+            height: 75%;
+            z-index: 5;
+        }
+
+        .whitebutton {
+
+            display: flex;
+            align-self: center;
+            margin-left: 5px;
+            margin-right: 5px;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 600;
+            line-height: 45px;
+            font-size: 100%;
+
+            color: #FFFFFF;
+        }
+
+        .whitebutton:hover {
+            color: darkgray;
+        }
+
+        .biglogo {
+            display: flex;
+            justify-content: center;
+            align-self: center;
+
+        }
+
+        .welcometext {
+            display: flex;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 300%;
+
+            color: #FFFFFF;
+        }
+
+        .whattodotext {
+
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+
+            color: #FFFFFF;
+        }
+
+        .shapes {
+            display: flex;
+            align-items: flex-end;
+        }
+
+
+
+        .lowerbar {
+            display: flex;
+            align-items: flex-end;
+
+            margin-right: 10px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 110%;
+            line-height: 29px;
+        }
+
+        .footer_elem{
+            color: black;
+        }
+
+        .footer_elem:hover {
+            color: darkgray;
+        }
+
+        .footer_elem_news{
+            color: white;
+        }
+
+        .footer_elem_news:hover{
+            color: darkgray;
+        }
+
+
+        .dropbtn {
+    background-color: #FF0000;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    margin-top: 45px;
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 20px;
+    box-shadow: 2px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    font-family: 'Montserrat';
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(0, 93, 255, 0.994792);
+    transition-property: opacity, visibility;
+    transition-delay: 2.5s;
+    visibility: visible;
+}
+
+.bluerect:hover .dropdown-content {display: block;}
+
+.bluerect:hover .dropbtn {background-color: #333;}
+
+.whitebutton:hover .dropdown-content {display: block;}
+
+.whitebutton:hover .dropbtn {background-color: #333;}
+    </style>
+</head>
+
+<body>
+
+
+<div class="header">
+    <nav style="display: flex; justify-content: center">
+        <a href="/" class="whitebutton">Главная</a>
+
+        <div class="bluerect dropdown">
+            <a class="funcbutton">Функционал</a>
+            <div class="dropdown-content">
+                <p></p>
+                <p></p>
+                <p></p>
+                <a href="/recognition">Распознавание речи</a>
+                <a href="/texttospeech">Синтез речи</a>
+                <a href="/cnv">Распознавание текста</a>
+            </div>
+        </div>
+
+        <div class="whiterect">
+            <div class="flexlogo" style="gap: 5px">
+                <a href="/" class="raspoznavator">Распознаватор</a>
+                <img src="/static/images/mini_logo.svg" class="minilogo">
+            </div>
+        </div>
+
+
+          {% if user.is_authenticated %}
+        <div class="whitebutton">
+        <a class="whitebutton">Мои записи</a>
+            <div class="dropdown-content">
+                <p></p>
+                <p></p>
+                <p></p>
+                <a href="/recognition/history">Распознанный текст c аудио</a>
+                <a href="/texttospeech/history">Аудиозаписи</a>
+                <a href="/cnv/history">Распознанный текст с изображений</a>
+            </div>
+        </div>
+        <div class="whitebutton">
+        <a class="whitebutton">Почта</a>
+            <div class="dropdown-content">
+                <p></p>
+                <p></p>
+                <p></p>
+                <a href="/recognition/sendhistory">Записи от пользователей</a>
+                <a href="/texttospeech/sendhistory">Аудио от пользователей</a>
+            </div>
+</div>
+        {% else %}
+
+        <a href="/signup" class="whitebutton">Регистрация</a>
+
+        <a href="/accounts/login" class="whitebutton">Вход</a>
+
+        {% endif %}
+
+    </nav>
+</div>
+{% if messages %}
+    {% for message in messages %}
+        <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+            {{ message }}
+    {% endfor %}
+    </p>
+{% endif %}
+    {% block body %}{% endblock %}
+<footer>
+    <div style="display:flex; justify-content: center; align-items: flex-end">
+        <div class="bluerect">
+            <div class="lowerbar" style="gap: 8px">
+                <a class="footer_elem" style="margin-left: 10px" href="http://math.kubsu.ru">Сайт факультета</a>
+                <span> | </span>
+                <a class="footer_elem_news" href="/news">Новости</a>
+                <span> | </span>
+                <a class="footer_elem" href="">Контакты</a>
+                <span> | </span>
+                <a class="footer_elem" href="/">FAQ</a>
+                {% if user.is_authenticated %}
+                <span> | </span>
+                <a class="footer_elem" href="/accounts/logout">Выход</a>
+                {% else %}
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+</body>
+</html>  

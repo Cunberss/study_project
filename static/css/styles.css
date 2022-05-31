@@ -1,0 +1,78 @@
+red {
+	color: red;
+}
+
+audio {
+  display: block;
+  width: 100%;
+  margin-top: 0.2rem;
+}
+
+.mainscreen {
+position: relative;
+width: 1920px;
+height: 1080px;
+/* Содержимое */
+}
+
+.navigation {
+position: absolute;
+width: 791px;
+height: 89px;
+left: 624px;
+top: 958px;
+}
+
+
+li {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+
+#recordingsList{
+	max-width: 28em;
+}
+
+.navigationnews{
+position: absolute;
+width: 111px;
+height: 22px;
+left: 871px;
+top: 986px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 29px;
+
+color: #FFFFFF;
+}
+
+.navigationsite {
+position: absolute;
+width: 256px;
+height: 22px;
+left: 637px;
+top: 986px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 29px;
+
+color: #000000;
+}
+
+.navigation2 {
+position: absolute;
+width: 604px;
+height: 86px;
+left: 624px;
+top: 960px;
+
+background: #005DFF;
+border-radius: 12px;
+}

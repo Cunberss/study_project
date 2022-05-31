@@ -1,0 +1,310 @@
+
+
+position: absolute;
+width: 1920px;
+height: 1080px;
+left: 0px;
+top: 0px;
+
+background: #FFFFFF;
+
+/* Фон */
+
+position: absolute;
+width: 1920px;
+height: 1080px;
+left: 0px;
+top: 0px;
+
+background: url(Deep Space.png);
+
+/* Футер */
+.navigation{
+position: absolute;
+width: 791px;
+height: 89px;
+left: 624px;
+top: 958px;
+}
+/* Rectangle 3 */
+.navigation2 {
+position: absolute;
+width: 604px;
+height: 86px;
+left: 624px;
+top: 960px;
+
+background: #005DFF;
+border-radius: 12px;
+}
+/* Сайт факультета */
+.navigationsite {
+position: absolute;
+width: 256px;
+height: 22px;
+left: 637px;
+top: 986px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 29px;
+
+color: #000000;
+}
+/* Новости */
+.navigationnews{
+position: absolute;
+width: 111px;
+height: 22px;
+left: 871px;
+top: 986px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 29px;
+
+color: #FFFFFF;
+}
+/* Контакты */
+
+position: absolute;
+width: 256px;
+height: 25px;
+left: 1009px;
+top: 986px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 29px;
+
+color: #000000;
+
+/* FAQ */
+
+position: absolute;
+width: 256px;
+height: 25px;
+left: 1159px;
+top: 986px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 29px;
+
+color: #000000;
+
+/* Line 2 */
+
+position: absolute;
+width: 87.01px;
+height: 0px;
+left: 857px;
+top: 958px;
+
+border: 1px solid #000000;
+transform: rotate(90.66deg);
+
+/* Line 3 */
+
+position: absolute;
+width: 87.01px;
+height: 0px;
+left: 995px;
+top: 959px;
+
+border: 1px solid #000000;
+transform: rotate(90.66deg);
+
+/* Line 4 */
+
+position: absolute;
+width: 87.01px;
+height: 0px;
+left: 1147px;
+top: 960px;
+
+border: 1px solid #000000;
+transform: rotate(90.66deg);
+
+/* Растянутый лого */
+
+position: absolute;
+left: 51.04%;
+right: 24.42%;
+top: 22.41%;
+bottom: 22.5%;
+
+/* svg_5 */
+
+position: absolute;
+left: 51.04%;
+right: 24.42%;
+top: 22.41%;
+bottom: 22.5%;
+
+/* svg_4 */
+
+position: absolute;
+left: 51.04%;
+right: 24.42%;
+top: 22.41%;
+bottom: 22.5%;
+
+background: linear-gradient(180deg, #FFFDFD 0%, rgba(255, 255, 255, 0) 100%);
+
+/* Хедер */
+
+position: absolute;
+width: 1113px;
+height: 105px;
+left: 380px;
+top: 0px;
+
+/* Главная */
+
+position: absolute;
+width: 117px;
+height: 22px;
+left: 380px;
+top: 42px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 29px;
+
+color: #FFFFFF;
+
+/* Rectangle 4 */
+
+position: absolute;
+width: 181px;
+height: 53px;
+left: 507px;
+top: 31px;
+
+background: rgba(0, 93, 255, 0.994792);
+border-radius: 12px;
+
+/* Функционал */
+
+position: absolute;
+width: 168px;
+height: 22px;
+left: 515px;
+top: 43px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 29px;
+
+color: #FFFFFF;
+
+/* Регистрация */
+
+position: absolute;
+width: 168px;
+height: 22px;
+left: 1138px;
+top: 43px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 29px;
+
+color: #FFFFFF;
+
+/* Войти */
+
+position: absolute;
+width: 168px;
+height: 52px;
+left: 1325px;
+top: 43px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 29px;
+
+color: #FFFFFF;
+
+/* Line 1 */
+
+position: absolute;
+width: 100px;
+height: 0px;
+left: 380px;
+top: 81px;
+
+border: 7px solid #005DFF;
+transform: rotate(0.57deg);
+
+/* Лого хедер */
+
+position: absolute;
+width: 638px;
+height: 105px;
+left: 702px;
+top: 0px;
+
+/* Rectangle 2 */
+
+position: absolute;
+width: 418px;
+height: 94px;
+left: 702px;
+top: 0px;
+
+background: #FFFDFD;
+border-radius: 12px;
+
+/* Распознаватор */
+
+position: absolute;
+width: 538px;
+height: 73px;
+left: 802px;
+top: 32px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 800;
+font-size: 36px;
+line-height: 44px;
+
+color: rgba(0, 93, 255, 0.994792);
+
+/* Group */
+
+position: absolute;
+left: 38.28%;
+right: 59.38%;
+top: 2.22%;
+bottom: 92.52%;
+
+/* svg_5 */
+
+position: absolute;
+left: 38.28%;
+right: 59.38%;
+top: 2.22%;
+bottom: 92.52%;
+
+/* svg_4 */
+
+position:

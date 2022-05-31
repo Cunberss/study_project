@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    {% load static %}
+
+<div align="center">
+	<p class="note"> Добавьте картинку формата png, bmp</p>
+<label for="file-upload" class="note-rect">
+    <i class="note"></i> Загрузить картинку
+</label>
+<form action="{% url 'cnv:main' %}" method=post enctype=multipart/form-data>
+{% csrf_token %}
+    <input hidden id="file-upload" name='uploadedFile' type="file"/>
+<input type=submit value="Отправить" name="Отправить" class="note-rect">
+<br>
+</form>
+    <p class="note">Или нарисуйте текст прямо здесь</p>
+
+
+
+<div align="center">
+        <canvas id="myCanvas" width="700" height="300"
+                style="background-color:#AAAAAA ; border: 10px solid #ccc; margin:10px;">
+            Ваш браузер не поддерживает Canvas
+        </canvas>
+</div>
+        <script>
+            var canvas = document.getElementById("myCanvas"),
+                context = canvas.getContext("2d"),
+                w = canvas.width,
+                h=canvas.height;
+
+            var mouse = { x:0, y:0};
+            var draw = false;
+
+            canvas.addEventListener("mousedown", function(e){
+
+                mouse.x = e.pageX - this.offsetLeft;
+                mouse.y = e.pageY - this.offsetTop;
+                draw = true;
+                context.beginPath();
+                context.moveTo(mouse.x, mouse.y);
+            });
+            canvas.addEventListener("mousemove", function(e){
+
+                if(draw==true){
+
+                    mouse.x = e.pageX - this.offsetLeft - 5;
+                    mouse.y = e.pageY - this.offsetTop - 5;
+                    context.lineWidth = 5;
+                    context.lineTo(mouse.x, mouse.y);
+                    context.stroke();
+                }
+            });
+            canvas.addEventListener("mouseup", function(e){
+
+                mouse.x = e.pageX - this.offsetLeft;
+                mouse.y = e.pageY - this.offsetTop;
+                context.lineTo(mouse.x, mouse.y);
+                context.stroke();
+                context.closePath();
+                draw = false;
+            });
+            function getImage(canvas){
+            var image = canvas.toDataURL();
+            return image;
+            }
+            function save(){
+            var Pic = document.getElementById("myCanvas").toDataURL("image/png");
+            Pic = Pic.replace(/^data:image\/(png|jpg);base64,/,"");
+            return Pic;
+            }
+        </script>
+<div align="center">
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input name="im" type="hidden" id="myField" value="" />
+        <input type="submit" class='note-rect' name="Обработать" onclick="fun()">
+        <a class='note-rect' href="/cnv">Сброс</a>
+        <script>
+            function fun(){
+            document.getElementById('myField').value = save();
+            }
+        </script>
+    </form>
+</div>
+{% endblock %}
+
+    {% block chern %}
+    <p>_____________</p>
+    {% endblock %}

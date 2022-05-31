@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Распознаватор
+{% endblock %}
+{% block body %}
+	<div class="note-rect">
+         <a href="yandexkit" class="note" >Google API</a>
+	</div>
+
+<div title='Добавьте аудиофайл любого формата' align="center">
+	<p class='note'>Добавьте файл формата .mp3</p>
+<label for="file-upload" class="note-rect">
+    <i class="note"></i> Загрузить аудиофайл
+</label>
+<form action="{% url 'recognition:index' %}" method=post enctype=multipart/form-data>
+<input hidden id="file-upload" name='uploadedFile' type="file"/>
+<input type=submit value="Отправить" name="Отправить" class="note-rect">
+<br>
+
+</form>
+</div>
+
+<div align="center" id="controls">
+	<p class='note'>Или вы можете записать аудио прямо сейчас</p>
+	<span class="brd">
+  	 <button id="recordButton" class="note-rect">Запись</button>
+  	 <button hidden id="pauseButton" disabled>Pause</button>
+  	 <button id="stopButton" class="note-rect" disabled>Стоп</button>
+	</span>
+	<p class='note'>Все ваши обработанные записи хранятся во вкладке "Мои записи"</p>
+</div>
+
+<div hidden id="formats">Format: start recording to see sample rate</div>
+
+<p class='note'><strong>Аудиозаписи:</strong></p>
+
+    <ol id="recordingsList"></ol>
+<script type='text/javascript' src="{% static 'js/recorder.js' %}"></script>
+<script type='text/javascript' src="{% static 'js/apps.js' %}"></script>
+<div><p>________________</p></div>
+{% endblock %}
+
+
